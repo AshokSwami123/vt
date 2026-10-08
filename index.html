@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>V-TRADE | Join Telegram</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .page {
+            width: 100%;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 50% 30%, rgba(255, 132, 0, 0.08), transparent 35%),
+                #000;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            padding: 12px 18px 40px;
+        }
+
+        /* HEADER */
+
+        .header {
+            height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #202020;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffb000, #e45c00);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 27px;
+            font-weight: 900;
+            color: #050505;
+            box-shadow: 0 0 18px rgba(255, 126, 0, .45);
+        }
+
+        .brand h2 {
+            font-size: 23px;
+            letter-spacing: 1px;
+            font-weight: 800;
+        }
+
+        .brand span {
+            display: block;
+            color: #d97b28;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-top: 3px;
+        }
+
+        .social {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .social a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .menu {
+            font-size: 28px;
+            color: #ddd;
+            margin-left: 6px;
+        }
+
+        /* BADGE */
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-top: 28px;
+            padding: 9px 18px;
+            border: 1px solid #783d0c;
+            border-radius: 30px;
+            background: rgba(255, 117, 0, .06);
+            color: #e88936;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            box-shadow: 0 0 18px rgba(255, 115, 0, .12);
+            margin-bottom: 20px;
+        }
+
+        .dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #ff9a3c;
+            box-shadow: 0 0 12px #ff8a20;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 24px 0 0;
+        }
+
+        .hero h1 {
+            font-size: 27px;
+            line-height: 1.28;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .hero h1 .orange {
+            color: #ff9a23;
+            display: block;
+            margin-top: 5px;
+            text-shadow: 0 0 18px rgba(255, 139, 25, .18);
+        }
+
+        .hero h2 {
+            font-size: 19px;
+            margin-top: 14px;
+            font-weight: 800;
+            letter-spacing: .3px;
+        }
+
+        .sub-heading {
+            margin-top: 15px;
+            color: #df7d31;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            line-height: 1.6;
+        }
+
+        .line {
+            height: 2px;
+            width: 100%;
+            margin: 22px 0;
+            background: linear-gradient(
+                90deg,
+                #ff7215,
+                #9b480d,
+                transparent
+            );
+            box-shadow: 0 0 10px rgba(255, 102, 0, .5);
+        }
+
+        /* CARDS */
+
+        .card {
+            position: relative;
+            background: linear-gradient(
+                145deg,
+                #111111,
+                #080808
+            );
+            border: 1px solid #292929;
+            border-radius: 24px;
+            padding: 21px;
+            margin-bottom: 18px;
+            display: flex;
+            gap: 17px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,.5);
+            transition: .3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #70380f;
+            box-shadow: 0 10px 35px rgba(255, 102, 0, .1);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: #ff7800;
+            filter: blur(80px);
+            opacity: .08;
+            top: -40px;
+            left: -30px;
+        }
+
+        .icon {
+            min-width: 55px;
+            height: 55px;
+            border-radius: 15px;
+            border: 1px solid #86420f;
+            background: rgba(255, 105, 0, .09);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff922b;
+            font-size: 25px;
+            box-shadow: inset 0 0 15px rgba(255, 119, 0, .08);
+        }
+
+        .card-content h3 {
+            color: #ff9b24;
+            font-size: 16px;
+            line-height: 1.5;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .card-content p {
+            margin-top: 8px;
+            color: #e6e6e6;
+            font-size: 14px;
+            line-height: 1.7;
+            font-weight: 600;
+        }
+
+        .highlight {
+            display: inline-block;
+            padding: 3px 7px;
+            border-radius: 8px;
+            background: rgba(255, 133, 23, .12);
+            border: 1px solid #62340e;
+            color: #ff9b37;
+        }
+
+        /* CTA */
+
+        .cta-box {
+            margin-top: 25px;
+            padding: 27px 20px;
+            border-radius: 24px;
+            text-align: center;
+            border: 1px solid #69350e;
+            background:
+                radial-gradient(circle at center, rgba(255, 119, 0, .13), transparent 65%),
+                #090909;
+        }
+
+        .cta-box h2 {
+            font-size: 22px;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.4;
+        }
+
+        .cta-box p {
+            color: #aaa;
+            font-size: 13px;
+            margin: 9px 0 18px;
+        }
+
+        .telegram-btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            min-height: 56px;
+            border-radius: 14px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 900;
+            letter-spacing: .5px;
+            background: linear-gradient(90deg, #ff8a19, #e85c00);
+            box-shadow:
+                0 0 20px rgba(255, 108, 0, .25),
+                inset 0 1px rgba(255,255,255,.25);
+            overflow: hidden;
+            animation: pulse 2s infinite;
+        }
+
+        .telegram-btn::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,.25),
+                transparent
+            );
+            transform: skewX(-20deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+            45%, 100% {
+                left: 150%;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 18px rgba(255, 108, 0, .2);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(255, 108, 0, .4);
+            }
+        }
+
+        .telegram-icon {
+            font-size: 21px;
+        }
+
+        .footer {
+            text-align: center;
+            color: #555;
+            font-size: 10px;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+
+        /* MOBILE */
+
+        @media(max-width: 480px) {
+
+            .container {
+                padding: 10px 14px 35px;
+            }
+
+            .header {
+                height: 72px;
+            }
+
+            .logo {
+                width: 45px;
+                height: 45px;
+                font-size: 23px;
+            }
+
+            .brand h2 {
+                font-size: 20px;
+            }
+
+            .brand span {
+                font-size: 10px;
+            }
+
+            .social {
+                gap: 9px;
+            }
+
+            .social a {
+                font-size: 15px;
+            }
+
+            .menu {
+                font-size: 25px;
+            }
+
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .hero h2 {
+                font-size: 17px;
+            }
+
+            .sub-heading {
+                font-size: 11px;
+            }
+
+            .card {
+                padding: 17px;
+                border-radius: 20px;
+                gap: 13px;
+            }
+
+            .icon {
+                min-width: 48px;
+                height: 48px;
+                font-size: 21px;
+            }
+
+            .card-content h3 {
+                font-size: 14px;
+            }
+
+            .card-content p {
+                font-size: 12px;
+            }
+
+            .cta-box h2 {
+                font-size: 19px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="container">
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <div class="logo-area">
+
+                <div class="logo">V</div>
+
+                <div class="brand">
+                    <h2>V-TRADE</h2>
+                    <span>WITH DISCIPLINE</span>
+                </div>
+
+            </div>
+
+            <div class="social">
+
+                <a href="#" aria-label="Instagram">◎</a>
+                <a href="#" aria-label="YouTube">▷</a>
+                <a href="#" aria-label="Telegram">➤</a>
+
+                <div class="menu">☰</div>
+
+            </div>
+
+        </header>
+
+
+        <!-- BADGE -->
+
+        <div class="badge">
+            <span class="dot"></span>
+            DATA-DRIVEN TRADING SYSTEM
+        </div>
+
+        
+
+         <a
+                class="telegram-btn"
+                href="https://t.me/+SbfQpTo3skk1OTI1"
+                target="_blank"
+            >
+                <span class="telegram-icon">➤</span>
+                JOIN TELEGRAM
+            </a>
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <h1>
+                TIRED OF WATCHING THE MARKET ALL DAY?
+                <span class="orange">
+                    TRADE SMART. NOT ALL DAY.
+                </span>
+            </h1>
+
+            <h2>
+                INTRADAY EQUITY TRADING
+            </h2>
+
+            <div class="sub-heading">
+                FOCUSED TRADING &nbsp; | &nbsp;
+                SYSTEMATIC APPROACH &nbsp; | &nbsp;
+                DISCIPLINED EXECUTION
+            </div>
+
+        </section>
+
+
+        <div class="line"></div>
+
+
+        <!-- CARD 1 -->
+
+        <div class="card">
+
+            <div class="icon">
+                ◎
+            </div>
+
+            <div class="card-content">
+
+                <h3>
+                    DON'T SPEND HOURS ANALYSING THE MARKET.
+                </h3>
+
+                <p>
+                    Simplify your market research with a
+                    <span class="highlight">
+                        systematic approach
+                    </span>
+                    designed for focused decision-making.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CARD 2 -->
+
+        <div class="card">
+
+            <div class="icon">
+                ↗
+            </div>
+
+            <div class="card-content">
+
+                <h3>
+                    DON'T TRADE ON EMOTIONS.
+                </h3>
+
+                <p>
+                    Follow clear trading rules and focus on
+                    <span class="highlight">
+                        disciplined execution
+                    </span>
+                    instead of random decisions.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CARD 3 -->
+
+        <div class="card">
+
+            <div class="icon">
+                ▥
+            </div>
+
+            <div class="card-content">
+
+                <h3>
+                    DON'T SPEND YEARS FIGURING OUT WHAT WORKS.
+                </h3>
+
+                <p>
+                    Learn practical
+                    <span class="highlight">
+                        systematic trading rules
+                    </span>
+                    and understand how structured setups work.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CARD 4 -->
+
+        <div class="card">
+
+            <div class="icon">
+                ➤
+            </div>
+
+            <div class="card-content">
+
+                <h3>
+                    GET MARKET INSIGHTS IN ONE PLACE.
+                </h3>
+
+                <p>
+                    Join our Telegram community for
+                    <span class="highlight">
+                        market insights & educational content
+                    </span>
+                    in one place.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CTA -->
+
+        <div class="cta-box">
+
+            <h2>
+                READY TO TRADE WITH DISCIPLINE?
+            </h2>
+
+            <p>
+                Join our Telegram community and stay connected.
+            </p>
+
+            <a
+                class="telegram-btn"
+                href="https://t.me/+SbfQpTo3skk1OTI1"
+                target="_blank"
+            >
+                <span class="telegram-icon">➤</span>
+                JOIN TELEGRAM
+            </a>
+
+        </div>
+
+
+        <div class="footer">
+            Trading involves market risk. This page is for educational and informational purposes only.
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
